@@ -9,6 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+
+
 const routes: Routes = [
   { path:  '', component:  LoginComponent},
   { path:  'login', component:  LoginComponent},
@@ -29,7 +31,7 @@ const routes: Routes = [
     AppRoutingModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(routes),
-    RouterModule
+    RouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
