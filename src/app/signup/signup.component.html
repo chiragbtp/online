@@ -1,7 +1,7 @@
 <div class="container" id="container">
 
-    <div class="form-container sign-in-container">
-		<form action="#">
+	<div class="form-container sign-in-container">
+		<form action="" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
 			<h1>Create Account</h1>
 			<div class="social-container">
 				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -9,10 +9,31 @@
 				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
 			</div>
 			<span>or use your email for registration</span>
-			<input type="text" placeholder="Name" />
-			<input type="email" placeholder="Email" />
-			<input type="password" placeholder="Password" />
-			<button  routerLink="/login"  >Sign Up</button>
+			<div class="row">
+				<input type="text" class="col-6 namefirst" id="firstname" formControlName="firstname"
+					placeholder="FirstName" required />
+				<input type="text" class="col-6 name" id="lastname" formControlName="lastname" placeholder="LastName" />
+			</div>
+
+
+			<input type="email" placeholder="Email" id="email" formControlName="email" required />
+			<div class="eye">
+				<input [type]="pass ? 'text' : 'password'" placeholder="Password" id="password"
+					formControlName="password" required /><i [ngClass]="{
+						'fa fa-eye-slash': !pass,
+						'fa fa-eye': pass
+					  }" (click)="toggleShow()"></i>
+			</div>
+			<div class="eye">
+
+				<input [type]="confirmpass ? 'text' : 'password'" placeholder="Confirm Password" id="confirmpassword"
+					formControlName="confirmpassword" /><i [ngClass]="{
+						'fa fa-eye-slash': !confirmpass,
+						'fa fa-eye': confirmpass
+					  }" (click)="toggleconfirm()"> </i>
+			</div>
+
+			<button>Sign Up</button>
 		</form>
 	</div>
 	<div class="overlay-container">
@@ -20,7 +41,7 @@
 			<div class="overlay-panel overlay-right">
 				<h1>Welcome Back!</h1>
 				<p>To keep connected with us please login with your personal info</p>
-				<button class="ghost" routerLink="/login" >Sign In</button>
+				<button class="ghost" routerLink="/login">Sign In</button>
 			</div>
 		</div>
 	</div>
