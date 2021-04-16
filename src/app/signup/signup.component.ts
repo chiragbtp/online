@@ -44,7 +44,7 @@ export class SignupComponent implements OnInit {
     const confirmpassword = this.signupForm.get('confirmpassword')?.value;
 
     console.log("userData", userdata);
-    
+
     if (password != confirmpassword) {
       this.toastr.error("password and confirm passord did not match")
     }
@@ -52,6 +52,7 @@ export class SignupComponent implements OnInit {
       console.log('asdas', this.signupForm.value)
     }
   }
+  
   toggleShow() {
     this.pass = !this.pass;
   }

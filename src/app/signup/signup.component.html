@@ -4,33 +4,35 @@
 		<form action="" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
 			<h1>Create Account</h1>
 			<div class="social-container">
-				<a  class="social"><i class="fab fa-facebook-f"></i></a>
+				<a class="social"><i class="fab fa-facebook-f"></i></a>
 				<a class="social"><i class="fab fa-google-plus-g"></i></a>
-				<a  class="social"><i class="fab fa-linkedin-in"></i></a>
+				<a class="social"><i class="fab fa-linkedin-in"></i></a>
 			</div>
 			<span>or use your email for registration</span>
 			<div class="row">
 				<input type="text" class="col-6 namefirst" id="firstname" formControlName="firstname"
 					placeholder="FirstName" required />
-				<input type="text" class="col-6 name" id="lastname" formControlName="lastname" placeholder="LastName" required/>
+				<input type="text" class="col-6 name" id="lastname" formControlName="lastname" placeholder="LastName"
+					required />
 			</div>
 
 
 			<input type="email" placeholder="Email" id="email" formControlName="email" required />
 			<div class="eye">
 				<input [type]="pass ? 'text' : 'password'" placeholder="Password" id="password"
-					formControlName="password" required /><i [ngClass]="{
-						'fa fa-eye-slash': !pass,
-						'fa fa-eye': pass
-					  }" (click)="toggleShow()"></i>
+					formControlName="password" required />
+				<a (click)="toggleShow()">
+					<i [ngClass]="pass ? 'fa fa-eye-slash' : 'fa fa-eye'"	></i>
+				</a>
+
 			</div>
 			<div class="eye">
 
 				<input [type]="confirmpass ? 'text' : 'password'" placeholder="Confirm Password" id="confirmpassword"
-					formControlName="confirmpassword" /><i [ngClass]="{
-						'fa fa-eye-slash': !confirmpass,
-						'fa fa-eye': confirmpass
-					  }" (click)="toggleconfirm()"> </i>
+					formControlName="confirmpassword" />
+				<a (click)="toggleconfirm()">
+					<i [ngClass]="confirmpass ? 'fa fa-eye-slash' : 'fa fa-eye'"></i>
+				</a>
 			</div>
 
 			<button [disabled]="signupForm.invalid">Sign Up</button>
