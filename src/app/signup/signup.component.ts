@@ -32,8 +32,9 @@ export class SignupComponent implements OnInit {
   get formControls() { return this.signupForm.controls; }
 
   onSubmit() {
-    const password =this.signupForm.get('password');
-    const confirmpassword =this.signupForm.get('confirmpassword');
+    debugger
+    const password =this.signupForm.get('password')?.value;
+    const confirmpassword =this.signupForm.get('confirmpassword')?.value;
 
     if(password != confirmpassword){
       this.toastr.error("password and confirm passord did not match")
