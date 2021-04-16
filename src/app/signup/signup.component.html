@@ -4,15 +4,15 @@
 		<form action="" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
 			<h1>Create Account</h1>
 			<div class="social-container">
-				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+				<a  class="social"><i class="fab fa-facebook-f"></i></a>
+				<a class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a  class="social"><i class="fab fa-linkedin-in"></i></a>
 			</div>
 			<span>or use your email for registration</span>
 			<div class="row">
 				<input type="text" class="col-6 namefirst" id="firstname" formControlName="firstname"
 					placeholder="FirstName" required />
-				<input type="text" class="col-6 name" id="lastname" formControlName="lastname" placeholder="LastName" />
+				<input type="text" class="col-6 name" id="lastname" formControlName="lastname" placeholder="LastName" required/>
 			</div>
 
 
@@ -33,7 +33,7 @@
 					  }" (click)="toggleconfirm()"> </i>
 			</div>
 
-			<button>Sign Up</button>
+			<button [disabled]="signupForm.invalid">Sign Up</button>
 		</form>
 	</div>
 	<div class="overlay-container">
