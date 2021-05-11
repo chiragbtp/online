@@ -4,3 +4,26 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+
+body.seo_version .left_navarea {
+    left: 0;
+    transition: all 0.4s ease-in-out 0s;
+    position: absolute;
+    margin-top: 67px;
+        display: none;
+
+
+}
+.left_navarea {
+   
+    transition: all 0.4s ease-in-out 0s;
+}
+
+// .seo_version .leftmenu  {
+//     display: none;
+// }
+
+// .seo_version .leftmenu1  {
+//     display: block;
+// }
